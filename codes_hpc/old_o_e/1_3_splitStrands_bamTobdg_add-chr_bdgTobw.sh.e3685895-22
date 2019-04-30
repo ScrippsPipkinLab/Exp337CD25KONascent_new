@@ -1,0 +1,12 @@
+The file '337-22_srt_dupr_flt_pos.bam' does not have BAM or CRAM format 
+The file '337-22_srt_dupr_flt_neg.bam' does not have BAM or CRAM format 
+awk: cmd. line:1: fatal: cannot open file `337-22_srt_dupr_flt_pos.bdg' for reading (No such file or directory)
+awk: cmd. line:1: fatal: cannot open file `337-22_srt_dupr_flt_neg.bdg' for reading (No such file or directory)
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
+The file '337-22_srt_flt_pos.bam' does not have BAM or CRAM format 
+The file '337-22_srt_flt_neg.bam' does not have BAM or CRAM format 
+awk: cmd. line:1: fatal: cannot open file `337-22_srt_flt_pos.bdg' for reading (No such file or directory)
+awk: cmd. line:1: fatal: cannot open file `337-22_srt_flt_neg.bdg' for reading (No such file or directory)
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)

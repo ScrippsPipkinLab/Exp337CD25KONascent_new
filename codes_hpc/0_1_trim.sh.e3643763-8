@@ -1,0 +1,229 @@
+No quality encoding type selected. Assuming that the data provided uses Sanger encoded Phred scores (default)
+
+Path to Cutadapt set as: 'cutadapt' (default)
+Cutadapt seems to be working fine (tested command 'cutadapt --version')
+
+
+AUTO-DETECTING ADAPTER TYPE
+===========================
+Attempting to auto-detect adapter type from the first 1 million sequences of the first file (>> 337-8_R1.fastq <<)
+
+Found perfect matches for the following adapter sequences:
+Adapter type	Count	Sequence	Sequences analysed	Percentage
+Illumina	3	AGATCGGAAGAGC	1000000	0.00
+Nextera	3	CTGTCTCTTATA	1000000	0.00
+smallRNA	0	TGGAATTCTCGG	1000000	0.00
+Use of uninitialized value in concatenation (.) or string at /opt/applications/trimgalore/0.4.1/bin/trim_galore line 1141, <AUTODETECT> line 4000000.
+Unable to auto-detect most prominent adapter from the first specified file (count Illumina: 3, count Nextera: )
+Using Illumina adapter for trimming (count: 3). Second best hit was Nextera (count: 3)
+
+Writing report to '337-8_R1.fastq_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: 337-8_R1.fastq
+Trimming mode: paired-end
+Trim Galore version: 0.4.1
+Cutadapt version: 1.18
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 24 bp
+
+Writing final adapter and quality trimmed output to 337-8_R1_trimmed.fq
+
+
+  >>> Now performing quality (cutoff 20) and adapter trimming in a single pass for the adapter sequence: 'AGATCGGAAGAGC' from file 337-8_R1.fastq <<< 
+10000000 sequences processed
+20000000 sequences processed
+This is cutadapt 1.18 with Python 2.7.11
+Command line parameters: -f fastq -e 0.1 -q 20 -O 3 -a AGATCGGAAGAGC 337-8_R1.fastq
+Processing reads on 1 core in single-end mode ...
+Finished in 603.44 s (27 us/read; 2.24 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:              22,492,354
+Reads with adapters:                   597,029 (2.7%)
+Reads written (passing filters):    22,492,354 (100.0%)
+
+Total basepairs processed:   899,694,160 bp
+Quality-trimmed:               1,439,352 bp (0.2%)
+Total written (filtered):    896,318,257 bp (99.6%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 597029 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 29.6%
+  C: 28.5%
+  G: 27.2%
+  T: 14.7%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	491999	351443.0	0	491999
+4	84910	87860.8	0	84910
+5	16910	21965.2	0	16910
+6	745	5491.3	0	745
+7	156	1372.8	0	156
+8	34	343.2	0	34
+9	1098	85.8	0	11 1087
+10	447	21.5	1	9 438
+11	190	5.4	1	5 185
+12	57	1.3	1	6 51
+13	27	0.3	1	3 24
+14	20	0.3	1	2 18
+15	21	0.3	1	5 16
+16	13	0.3	1	2 11
+17	17	0.3	1	3 14
+18	26	0.3	1	5 21
+19	10	0.3	1	0 10
+20	11	0.3	1	1 10
+21	12	0.3	1	0 12
+22	8	0.3	1	2 6
+23	16	0.3	1	1 15
+24	15	0.3	1	1 14
+25	15	0.3	1	1 14
+26	12	0.3	1	2 10
+27	13	0.3	1	0 13
+28	14	0.3	1	1 13
+29	5	0.3	1	2 3
+30	10	0.3	1	0 10
+31	22	0.3	1	1 21
+32	5	0.3	1	0 5
+33	16	0.3	1	1 15
+34	13	0.3	1	0 13
+35	10	0.3	1	0 10
+36	9	0.3	1	0 9
+37	29	0.3	1	1 28
+38	23	0.3	1	1 22
+39	21	0.3	1	0 21
+40	70	0.3	1	1 69
+
+
+RUN STATISTICS FOR INPUT FILE: 337-8_R1.fastq
+=============================================
+22492354 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Writing report to '337-8_R2.fastq_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: 337-8_R2.fastq
+Trimming mode: paired-end
+Trim Galore version: 0.4.1
+Cutadapt version: 1.18
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 24 bp
+
+Writing final adapter and quality trimmed output to 337-8_R2_trimmed.fq
+
+
+  >>> Now performing quality (cutoff 20) and adapter trimming in a single pass for the adapter sequence: 'AGATCGGAAGAGC' from file 337-8_R2.fastq <<< 
+10000000 sequences processed
+20000000 sequences processed
+This is cutadapt 1.18 with Python 2.7.11
+Command line parameters: -f fastq -e 0.1 -q 20 -O 3 -a AGATCGGAAGAGC 337-8_R2.fastq
+Processing reads on 1 core in single-end mode ...
+Finished in 603.19 s (27 us/read; 2.24 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:              22,492,354
+Reads with adapters:                   550,457 (2.4%)
+Reads written (passing filters):    22,492,354 (100.0%)
+
+Total basepairs processed:   899,694,160 bp
+Quality-trimmed:               3,859,950 bp (0.4%)
+Total written (filtered):    894,038,644 bp (99.4%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 550457 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 27.6%
+  C: 26.0%
+  G: 28.1%
+  T: 18.4%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	441998	351443.0	0	441998
+4	89462	87860.8	0	89462
+5	16366	21965.2	0	16366
+6	853	5491.3	0	853
+7	188	1372.8	0	188
+8	50	343.2	0	50
+9	367	85.8	0	27 340
+10	444	21.5	1	12 432
+11	201	5.4	1	10 191
+12	66	1.3	1	4 62
+13	24	0.3	1	2 22
+14	15	0.3	1	3 12
+15	15	0.3	1	5 10
+16	22	0.3	1	4 18
+17	12	0.3	1	0 12
+18	18	0.3	1	4 14
+19	21	0.3	1	2 19
+20	13	0.3	1	1 12
+21	23	0.3	1	0 23
+22	9	0.3	1	1 8
+23	10	0.3	1	0 10
+24	17	0.3	1	2 15
+25	16	0.3	1	1 15
+26	18	0.3	1	0 18
+27	18	0.3	1	1 17
+28	12	0.3	1	1 11
+29	6	0.3	1	0 6
+30	17	0.3	1	0 17
+31	22	0.3	1	1 21
+32	12	0.3	1	0 12
+33	11	0.3	1	1 10
+34	4	0.3	1	0 4
+35	21	0.3	1	0 21
+36	5	0.3	1	0 5
+37	43	0.3	1	0 43
+38	18	0.3	1	0 18
+39	20	0.3	1	2 18
+40	20	0.3	1	1 19
+
+
+RUN STATISTICS FOR INPUT FILE: 337-8_R2.fastq
+=============================================
+22492354 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Validate paired-end files 337-8_R1_trimmed.fq and 337-8_R2_trimmed.fq
+file_1: 337-8_R1_trimmed.fq, file_2: 337-8_R2_trimmed.fq
+
+
+>>>>> Now validing the length of the 2 paired-end infiles: 337-8_R1_trimmed.fq and 337-8_R2_trimmed.fq <<<<<
+Writing validated paired-end read 1 reads to 337-8_R1_val_1.fq
+Writing validated paired-end read 2 reads to 337-8_R2_val_2.fq
+
+Total number of sequences analysed: 22492354
+
+Number of sequence pairs removed because at least one read was shorter than the length cutoff (24 bp): 59759 (0.27%)
+
+Deleting both intermediate output files 337-8_R1_trimmed.fq and 337-8_R2_trimmed.fq
+
+====================================================================================================
+

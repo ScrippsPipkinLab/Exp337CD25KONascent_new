@@ -1,0 +1,7 @@
+Could not locate a Bowtie index corresponding to basename "/gpfs/home/hdiao/resources/illumina_ensembl_mus_musculus/Mus_musculus/Ensembl/GRCm38/Sequence/Bowtie2Inde/genome"
+Error: Encountered internal Bowtie 2 exception (#1)
+Command: /opt/applications/bowtie2/2.2.9/bowtie2-align-s --wrapper basic-0 -p 16 -x /gpfs/home/hdiao/resources/illumina_ensembl_mus_musculus/Mus_musculus/Ensembl/GRCm38/Sequence/Bowtie2Inde/genome -X 2000 --fr -S 337-15.sam -1 337-15_R1_val_1.fq -2 337-15_R2_val_2.fq 
+(ERR): bowtie2-align exited with value 1
+[bam_rmdup] input SAM does not have header. Abort!
+[E::hts_open_format] fail to open file '337-15_srt_dupr.bam'
+samtools index: failed to open "337-15_srt_dupr.bam": No such file or directory
