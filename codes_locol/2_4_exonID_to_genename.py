@@ -41,8 +41,18 @@ reftab = ascii.read(GRCm38_ref)
 id_list = list(reftab.columns[0])
 gn_list = list(reftab.columns[1])
 
+'''
 for file in glob.glob("*.csv"):
     TIDtoGN(file, id_list, gn_list)
+'''
+
+os.chdir("/Volumes/EXP337/Exp337CD25KONascent/2_count/2_Compiled_csv")
+in_file = "Exp337_dupr_all_count_c5.csv"
+TIDtoGN(in_file, id_list, gn_list)
 
 
-    
+
+
+
+
+
