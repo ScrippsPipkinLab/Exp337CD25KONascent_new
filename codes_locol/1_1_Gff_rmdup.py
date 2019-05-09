@@ -13,9 +13,9 @@ wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/References"
 os.chdir(wk_dir)
 
 ###----- Remove duplicates
-in_file = "GRCm38_exon.gff"
-out_file = "GRCm38_exon_rmdup.gff"
-out_file2 = "GRCm38_exon_rmdup.csv"
+in_file = "GRCm38.gff"
+out_file = "GRCm38_rmdup.gff"
+out_file2 = "GRCm38_rmdup.csv"
 out2_header = ["Transcript stable ID", "Exon stable ID", "Chromosome/scaffold name", 
                "Strand", "Transcript start (bp)", "Transcript end (bp)", 
                "Transcription start site (TSS)", 
@@ -42,16 +42,17 @@ with open(in_file, "r") as fin:
                 else:
                     dup = False
                 if dup == False:
-                    wfout.writerow(row)  
-                    wfout2.writerow(row)
+                    if row_chr_n.isdigit() or row_chr_n == "X":
+                        wfout.writerow(row)  
+                        wfout2.writerow(row)
                 chr_n = row_chr_n
                 s_pos = row_s_pos
                 e_pos = row_e_pos
     
 ###----- Combine exons
-in_file = "GRCm38_exon_rmdup_srt.csv"
-out_file = "GRCm38_exon_rmdup_srt_cb.csv"
-out_file2 = "GRCm38_exon_rmdup_srt_cb.gff"
+in_file = "GRCm38_rmdup_srt.csv"
+out_file = "GRCm38_rmdup_srt_cb.csv"
+out_file2 = "GRCm38_rmdup_srt_cb.gff"
 
 def overlap(listx):
     #listx = [[1,3], [5,10], [3,6]]
@@ -116,7 +117,38 @@ with open(in_file, "r") as fin:
                     
                     
                 
+###----- Remove duplicates again... 
+in_file = "GRCm38_exon_rmdup_srt_cb_srt.csv"
+out_file = "GRCm38_exon_rmdup_srt_cb_srt_dupr.gff"
+out_file2 = "GRCm38_exon_rmdup_srt_cb_srt_dupr.csv"
 
+with open(in_file, "r") as fin:
+    with open(out_file, "w") as fout:
+        with open(out_file2, "w") as fout2:
+            rfin = csv.reader(fin, delimiter = ",")
+            wfout = csv.writer(fout, delimiter = "\t")
+            wfout2 = csv.writer(fout2, delimiter = ",")
+            wfout2.writerow(next(rfin))
+            chr_n = 0
+            s_pos = 0
+            e_pos = 0
+            dup = True
+            for row in rfin:
+                row_chr_n = row[0]
+                row_s_pos = row[3]
+                row_e_pos = row[4]
+                if (row_chr_n == chr_n) and (row_s_pos == s_pos) and (row_e_pos == e_pos):
+                    dup = True
+                else:
+                    dup = False
+                if dup == False:
+                    if row_chr_n.isdigit() or row_chr_n == "X"  or row_chr_n == "Y":
+                        wfout.writerow(row)  
+                        wfout2.writerow(row)
+                chr_n = row_chr_n
+                s_pos = row_s_pos
+                e_pos = row_e_pos
+    
 
 
 

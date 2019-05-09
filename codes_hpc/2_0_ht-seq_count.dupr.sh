@@ -9,7 +9,7 @@ INDIR=/gpfs/group/pipkin/Exp337/srt_flt_bam/dupr/stranded_bam
 cd $INDIR
 
 ##### Names
-ref_gff=/gpfs/group/pipkin/Exp337/codes/GRCm38_exon_rmdup.gff
+ref_gff=/gpfs/group/pipkin/Exp337/codes/GRCm38_exon_rmdup_srt_cb.gff
 
 bam_name_srt_dupr_flt_pos_srt=337-${PBS_ARRAYID}_srt_dupr_flt_pos_srt.bam
 bam_name_srt_dupr_flt_neg_srt=337-${PBS_ARRAYID}_srt_dupr_flt_neg_srt.bam
