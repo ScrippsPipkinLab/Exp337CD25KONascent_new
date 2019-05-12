@@ -63,14 +63,14 @@ def CompileCount(wkDir, outName):
             wfout.writerow(newrow)
 
 def filterWrongDir(inFile, inStrand, refFile):
-    #refFile = "/Volumes/EXP337/Exp337CD25KONascent/References/GRCm38_exon_rmdup.csv"
+    #refFile = "/Volumes/EXP337/Exp337CD25KONascent/References/GRCm38_exon_rmdup_srt_cb_srt_dupr.csv"
     #inStrand = -1
     outFile = inFile.replace(".csv", "_flt.csv")
     
-    refTab = ascii.read(refFile)
-    refIDs = list(refTab['attribute'])
+    refTab = ascii.read(refFile)        
+    refIDs = list(refTab.columns[8])
     refIDs = [x.replace("ID=", "") for x in refIDs]
-    refstrand = list(refTab['strand'])
+    refstrand = list(refTab.columns[6])
     refstrand_cor = [idx for idx, x in enumerate(refstrand) if x==inStrand]
     refIDs_cor = [refIDs[x] for x in refstrand_cor]
     refIDs_cor[0]
@@ -122,19 +122,19 @@ def filterCount(inFile, cutoff):
 ########## Main ##########
 
 ##### Convert counts
-wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/2_count"
+wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/2_count/1_dupr_count_new"
 os.chdir(wk_dir)
 
 for file in glob.glob("*.count"):
     count_to_csv(file)
 
 ##### Compile counts
-wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/2_count/F_csv"
+wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/2_count/1_dupr_count_new/F_csv"
 os.chdir(wk_dir)
 out_name = "Exp337_dupr_F_count.csv"
 CompileCount(wk_dir, out_name)
 
-wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/2_count/R_csv"
+wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/2_count/1_dupr_count_new/R_csv"
 os.chdir(wk_dir)
 out_name = "Exp337_dupr_R_count.csv"
 CompileCount(wk_dir, out_name)
@@ -144,22 +144,19 @@ CompileCount(wk_dir, out_name)
 '''
 wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/2_count/2_Compiled_csv"
 os.chdir(wk_dir)
-refFile = "/Volumes/EXP337/Exp337CD25KONascent/References/GRCm38_exon_rmdup.csv"
+refFile = "/Volumes/EXP337/Exp337CD25KONascent/References/GRCm38_exon_rmdup_srt_cb_srt_dupr.csv"
 filterWrongDir("Exp337_dupr_F_count.csv", -1, refFile)
 filterWrongDir("Exp337_dupr_R_count.csv", 1, refFile)
-filterWrongDir("Exp337_dupr_F_count_c5.csv", -1, refFile)
-filterWrongDir("Exp337_dupr_R_count_c5.csv", 1, refFile)
+filterWrongDir("Exp337_dupr_F_count_c5.csv", "-", refFile)
+filterWrongDir("Exp337_dupr_R_count_c5.csv", "+", refFile)
 '''
 
 ##### Filter count table
 wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/2_count/2_Compiled_csv"
 os.chdir(wk_dir)
 
-filterCount("Exp337_dupr_F_count_flt.csv", 5)
-filterCount("Exp337_dupr_R_count_flt.csv", 5)
-
-
-
+filterCount("Exp337_dupr_F_count.csv", 5)
+filterCount("Exp337_dupr_R_count.csv", 5)
 
 
 

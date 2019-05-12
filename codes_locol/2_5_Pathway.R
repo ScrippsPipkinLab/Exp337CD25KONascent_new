@@ -18,13 +18,15 @@ library("clusterProfiler")
 library("org.Mm.eg.db")
 
 ##########---------- Main
-in.dir <- "/Volumes/EXP337/Exp337CD25KONascent/3_DE-seq/0_DEseq2_out/pval_0.05/geneName"
-wk.dir <- "/Volumes/EXP337/Exp337CD25KONascent/3_DE-seq/0_DEseq2_out/pval_0.05/Pathway"
+in.dir <- "/Volumes/EXP337/Exp337CD25KONascent/3_DE-seq/DEseq2_out/1.2.1_pval_GN"
+wk.dir <- "/Volumes/EXP337/Exp337CD25KONascent/3_DE-seq/DEseq2_out/1.2.1.1_pval_GN_pathway"
 
 in.file.vec <- list.files(path=in.dir, pattern="*.csv")
+in.file.vec <- tail(in.file.vec, n=6)
+in.file.vec
 
 ### Go-term dot plot
-if (TRUE) {
+if (FALSE) {
   for (i in in.file.vec) {
     #i <- in.file.vec[1]
     print(paste("Start analysis of:", i, sep=" "))

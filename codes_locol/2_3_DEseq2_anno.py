@@ -141,7 +141,7 @@ file_list = ["DEseq_baseMean_log2fc-c1.csv", "DEseq_log2fc_log2fc-c1.csv",
 fltTables(file_list,  "DEseq_pval_log2fc-c1.csv", 0.05, "less", "log2fc")
 
 ###----- Filter each file
-wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/3_DE-seq/0_DEseq2_out"
+wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/3_DE-seq/DEseq2_out"
 os.chdir(wk_dir)
 
 for file in glob.glob("*h.csv"):
