@@ -16,22 +16,22 @@
 
 ## Analysis steps <br/>
 ### 0. QC <br/> 
-__Output files__: [Multi-QC results](0_QC/multiqc_report.html)
+>__Output files__: [Multi-QC results](0_QC/multiqc_report.html)
 
 ### 1. Trim & Alignment & Convert & Filter
 >__Script__: [HPC codes](codes)
 
 ### 2. Strand split & HTseq count & Count compilation & Normalization
->__Script__: [HPC codes](codes)
+>__Script__: [HPC codes](codes)  <br/>
 __Output files__: <br/>
 [HTseq-count output](2_count/1_dupr_count_new/) <br/>
 [Compiled count](2_count/2_compiled_csv/) <br/>
 [Normalized TPM](2_count/3_tpm/)
 
 ### 3. DEseq
->__Script__: [DEseq2](codes_locol/2_2_DEseq2.R)
+>__Script__: [DEseq2](codes_locol/2_2_DEseq2.R)  <br/>
 __Output files__: <br/>
-[ENSEMBL ID](3_DE-seq/DEseq2_out/0_original/)
+[ENSEMBL ID](3_DE-seq/DEseq2_out/0_original/)  <br/>
 [Gene name](3_DE-seq/DEseq2_out/0.1_original_GN/)
 
 
