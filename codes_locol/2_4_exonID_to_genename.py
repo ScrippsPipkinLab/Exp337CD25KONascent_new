@@ -24,19 +24,18 @@ def TIDtoGN(fileX, idList, gnList):
             rfin = csv.reader(fin, delimiter=",")
             wfout = csv.writer(fout, delimiter=",")
             header = next(rfin)
-            header[0] = "exonID"
-            header.append("gene_name")
+            header[0] = "gene_name"
             wfout.writerow(header)
             for row in rfin:
                 gn_idx = idList.index(row[0])
-                row.append(gnList[gn_idx])
+                row[0] = gnList[gn_idx]
                 wfout.writerow(row)
 
 ########## Main ##########
-wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/3_DE-seq/DEseq2_out/pval"
+wk_dir = "/Volumes/Yolanda/Exp337CD25KONascent/3_DE-seq/DEseq2_out/0_original"
 os.chdir(wk_dir)
 
-GRCm38_ref = "/Volumes/EXP337/Exp337CD25KONascent/References/GRCm38_exonid_genename.csv"
+GRCm38_ref = "/Volumes/Yolanda/Exp337CD25KONascent/References/GRCm38_exonid_genename.csv"
 reftab = ascii.read(GRCm38_ref)
 id_list = list(reftab.columns[0])
 gn_list = list(reftab.columns[1])

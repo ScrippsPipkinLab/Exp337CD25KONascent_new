@@ -28,3 +28,9 @@ row.names <- c("KO_0h_rep1_dupr", "KO_0h_rep2_dupr", "KO_0h_rep3_dupr", "KO_24h_
                "WT_6h_rep1_dupr", "WT_6h_rep2_dupr", "WT_6h_rep3_dupr")
 conds <- c("KO_0h", "KO_0h", "KO_0h", "KO_24h", "KO_24h", "KO_24h", "KO_48h", "KO_48h", "KO_48h", "KO_6h", "KO_6h", 
            "WT_0h", "WT_0h", "WT_0h", "WT_24h", "WT_24h", "WT_24h", "WT_48h", "WT_48h", "WT_48h", "WT_6h", "WT_6h", "WT_6h")
+
+
+
+
+
+

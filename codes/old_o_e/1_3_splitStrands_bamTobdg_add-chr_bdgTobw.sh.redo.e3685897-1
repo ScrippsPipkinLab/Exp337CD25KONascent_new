@@ -1,0 +1,31 @@
+[W::bam_hdr_read] EOF marker is absent. The input is probably truncated.
+[W::bam_hdr_read] EOF marker is absent. The input is probably truncated.
+samtools index: "337-1_srt_flt_neg.bam" is corrupted or unsorted
+normalization: 1x (effective genome size 2652783500)
+minFragmentLength: 0
+verbose: False
+out_file_for_raw_data: None
+numberOfSamples: None
+bedFile: None
+bamFilesList: ['337-1_srt_flt_pos.bam']
+numberOfProcessors: 1
+samFlag_exclude: None
+save_data: False
+stepSize: 10
+smoothLength: None
+blackListFileName: None
+center_read: False
+skipZeroOverZero: False
+ignoreDuplicates: False
+defaultFragmentLength: 208
+chrsToSkip: []
+region: None
+maxPairedFragmentLength: 832
+samFlag_include: None
+binLength: 10
+maxFragmentLength: 0
+minMappingQuality: None
+zerosToNans: False
+'337-1_srt_flt_neg.bam' does not appear to have an index. You MUST index the file first!
+awk: cmd. line:1: fatal: cannot open file `337-1_srt_flt_neg.bdg' for reading (No such file or directory)
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
