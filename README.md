@@ -28,11 +28,11 @@ __Output files__: <br/>
 [Compiled count](2_count/2_compiled_csv/) <br/>
 [Normalized TPM](2_count/3_tpm/)
 
-### 3. DEseq
+### 3. DEseq2 
 >__Script__: [DEseq2](codes_locol/2_2_DEseq2.R)  <br/>
 __Output files__: <br/>
-[ENSEMBL ID](3_DE-seq/DEseq2_out/0_original/)  <br/>
-[Gene name](3_DE-seq/DEseq2_out/0.1_original_GN/)
+[DEseq2 output with ENSEMBL-ID](3_DE-seq/DEseq2_out/0_original/)  <br/>
+[DEseq2 output with GeneName](3_DE-seq/DEseq2_out/0.1_original_GN/)
 
 
 
