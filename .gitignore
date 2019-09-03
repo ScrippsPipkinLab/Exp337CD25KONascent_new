@@ -1,1 +1,5 @@
+# Large reference files
 /References/mart_export_20190509.csv
+
+# Ignore Mac generated resource fork files
+._*
