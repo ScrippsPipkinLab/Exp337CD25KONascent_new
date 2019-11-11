@@ -1,0 +1,152 @@
+BamQC report
+-----------------------------------
+
+>>>>>>> Input
+
+     bam file = 337-21_pos_pSrt.bam
+     outfile = /gpfs/group/pipkin/Exp337/srt_flt_bam/dupr/stranded_bam/337-21_pos_pSrt_stats/genome_results.txt
+
+
+>>>>>>> Reference
+
+     number of bases = 2,725,537,669 bp
+     number of contigs = 22
+
+
+>>>>>>> Globals
+
+     number of windows = 421
+
+     number of reads = 8,668,351
+     number of mapped reads = 8,668,351 (100%)
+
+     number of mapped paired reads (first in pair) = 4,315,758
+     number of mapped paired reads (second in pair) = 4,352,593
+     number of mapped paired reads (both in pair) = 8,668,351
+     number of mapped paired reads (singletons) = 0
+
+     number of mapped bases = 345,191,788 bp
+     number of sequenced bases = 345,141,810 bp
+     number of aligned bases = 0 bp
+     number of duplicated reads (estimated) = 311,874
+     duplication rate = 3.66%
+
+
+>>>>>>> Insert size
+
+     mean insert size = 244.9811
+     std insert size = 170.0813
+     median insert size = 209
+
+
+>>>>>>> Mapping quality
+
+     mean mapping quality = 34.7176
+
+
+>>>>>>> ACTG content
+
+     number of A's = 96,086,940 bp (27.84%)
+     number of C's = 81,872,674 bp (23.72%)
+     number of T's = 90,681,179 bp (26.27%)
+     number of G's = 76,501,017 bp (22.17%)
+     number of N's = 6,751 bp (0%)
+
+     GC percentage = 45.89%
+
+
+>>>>>>> Mismatches and indels
+
+    general error rate = 0.0039
+    number of mismatches = 1,290,342
+    number of insertions = 32,039
+    mapped reads with insertion percentage = 0.37%
+    number of deletions = 33,433
+    mapped reads with deletion percentage = 0.38%
+    homopolymer indels = 67.23%
+
+
+>>>>>>> Coverage
+
+     mean coverageData = 0.1267X
+     std coverageData = 0.8978X
+
+     There is a 4.86% of reference with a coverageData >= 1X
+     There is a 2.38% of reference with a coverageData >= 2X
+     There is a 1.45% of reference with a coverageData >= 3X
+     There is a 0.96% of reference with a coverageData >= 4X
+     There is a 0.66% of reference with a coverageData >= 5X
+     There is a 0.48% of reference with a coverageData >= 6X
+     There is a 0.36% of reference with a coverageData >= 7X
+     There is a 0.27% of reference with a coverageData >= 8X
+     There is a 0.21% of reference with a coverageData >= 9X
+     There is a 0.17% of reference with a coverageData >= 10X
+     There is a 0.14% of reference with a coverageData >= 11X
+     There is a 0.11% of reference with a coverageData >= 12X
+     There is a 0.09% of reference with a coverageData >= 13X
+     There is a 0.07% of reference with a coverageData >= 14X
+     There is a 0.06% of reference with a coverageData >= 15X
+     There is a 0.05% of reference with a coverageData >= 16X
+     There is a 0.04% of reference with a coverageData >= 17X
+     There is a 0.04% of reference with a coverageData >= 18X
+     There is a 0.03% of reference with a coverageData >= 19X
+     There is a 0.03% of reference with a coverageData >= 20X
+     There is a 0.02% of reference with a coverageData >= 21X
+     There is a 0.02% of reference with a coverageData >= 22X
+     There is a 0.02% of reference with a coverageData >= 23X
+     There is a 0.02% of reference with a coverageData >= 24X
+     There is a 0.01% of reference with a coverageData >= 25X
+     There is a 0.01% of reference with a coverageData >= 26X
+     There is a 0.01% of reference with a coverageData >= 27X
+     There is a 0.01% of reference with a coverageData >= 28X
+     There is a 0.01% of reference with a coverageData >= 29X
+     There is a 0.01% of reference with a coverageData >= 30X
+     There is a 0.01% of reference with a coverageData >= 31X
+     There is a 0.01% of reference with a coverageData >= 32X
+     There is a 0% of reference with a coverageData >= 33X
+     There is a 0% of reference with a coverageData >= 34X
+     There is a 0% of reference with a coverageData >= 35X
+     There is a 0% of reference with a coverageData >= 36X
+     There is a 0% of reference with a coverageData >= 37X
+     There is a 0% of reference with a coverageData >= 38X
+     There is a 0% of reference with a coverageData >= 39X
+     There is a 0% of reference with a coverageData >= 40X
+     There is a 0% of reference with a coverageData >= 41X
+     There is a 0% of reference with a coverageData >= 42X
+     There is a 0% of reference with a coverageData >= 43X
+     There is a 0% of reference with a coverageData >= 44X
+     There is a 0% of reference with a coverageData >= 45X
+     There is a 0% of reference with a coverageData >= 46X
+     There is a 0% of reference with a coverageData >= 47X
+     There is a 0% of reference with a coverageData >= 48X
+     There is a 0% of reference with a coverageData >= 49X
+     There is a 0% of reference with a coverageData >= 50X
+     There is a 0% of reference with a coverageData >= 51X
+
+
+>>>>>>> Coverage per contig
+
+	10	130694993	15493803	0.11854932346184065	0.8130515077224932
+	11	122082543	34399459	0.2817721367419419	1.4614205596222483
+	12	120129022	13549528	0.11279146183342773	0.8350523562876361
+	13	120421639	14110970	0.11717968728195105	0.7217248871835492
+	14	124902244	12078664	0.0967049399048427	0.6243673589148647
+	15	104043685	17435293	0.1675766578240669	1.0608021570680943
+	16	98207768	10562755	0.10755518850606603	0.7143506040428952
+	17	94987271	16419714	0.17286225645960498	1.1551176028504642
+	18	90702639	8111349	0.08942792722932791	0.5829205836633616
+	19	61431566	10399633	0.1692880985648323	1.199650513446383
+	1	195471971	26211797	0.13409491328043138	0.8582146503936824
+	2	182113224	23601957	0.12960045669171175	0.7715505085391304
+	3	160039680	12638522	0.07897117764794331	0.5914488397042994
+	4	156508116	21035225	0.1344034133028603	0.9660555412109503
+	5	151834684	25424327	0.16744742591225073	1.1128192094243727
+	6	149736546	20537541	0.1371578385413004	1.0601112852166292
+	7	145441459	23477574	0.16142284436241802	1.156563494712459
+	8	129401213	15330960	0.1184761691530666	0.8409420164135177
+	9	124595110	16882673	0.1355002856853692	0.8814937394141077
+	MT	16299	0	0.0	0.0
+	X	171031299	7294213	0.042648410218763526	0.4839016297207609
+	Y	91744698	195831	0.002134521168732824	0.07817402666372897
+
+
