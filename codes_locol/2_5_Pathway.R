@@ -16,55 +16,81 @@ library(ggrepel)
 library("clusterProfiler")
 #BiocManager::install("org.Mm.eg.db")
 library("org.Mm.eg.db")
+library(dplyr)
+library(tidyverse)
+
+GO_run <- function(genes.i, i){
+  #file.i <-  "/Volumes/Yolanda/Exp334CD25KOSc/4_D3E/0_clusterComparison/2_updn/C0_vs_C1_fix_pval0.05_dn.csv" # For testing
+  #log2fc_cutoff <- 1.5 # For testing
+  print(paste(i, "    Gene number: ", as.character(length(genes.i), sep="")))
+  genes.i.id <- AnnotationDbi::select(org.Mm.eg.db, genes.i, c("ENTREZID"), "ALIAS")
+  
+  egoBP <- enrichGO(gene = genes.i.id$ENTREZID, keyType = 'ENTREZID', OrgDb = org.Mm.eg.db, ont = "BP", pvalueCutoff = 0.05, readable = TRUE) #pAdjustMethod = "none"
+  egoCC <- enrichGO(gene = genes.i.id$ENTREZID, keyType = 'ENTREZID', OrgDb = org.Mm.eg.db, ont = "CC", pvalueCutoff = 0.05, readable = TRUE)
+  egoMF <- enrichGO(gene = genes.i.id$ENTREZID, keyType = 'ENTREZID', OrgDb = org.Mm.eg.db, ont = "MF", pvalueCutoff = 0.05, readable = TRUE)
+  
+  # Dotplot visualization
+  if (!is.null(egoBP)){
+    pdf.name <- paste(i,"_BP_dotplot.pdf",sep="")
+    csv.name <- paste(i,"_BP_dotplot.csv",sep="")
+    write.csv(egoBP@result, file=csv.name, row.names=FALSE)
+    egoBP.dotplot <- dotplot(egoBP, x="count", showCategory=25)
+    ggsave(pdf.name, egoBP.dotplot, device = "pdf", width = 30, height = 20, units = "cm")  
+    
+  }
+  if(!is.null(egoCC)){
+    csv.name <- paste(i,"_CC_dotplot.csv",sep="")
+    pdf.name <- paste(i,"_CC_dotplot.pdf",sep="")
+    write.csv(egoCC@result, file=csv.name, row.names=FALSE)
+    egoCC.dotplot <- dotplot(egoCC, x="count", showCategory=25)
+    ggsave(pdf.name, egoCC.dotplot, device = "pdf", width = 30, height = 20, units = "cm")  
+  }
+  if(!is.null(egoMF)){
+    csv.name <- paste(i,"_MF_dotplot.csv",sep="")
+    pdf.name <- paste(i,"_MF_dotplot.pdf",sep="")
+    write.csv(egoMF@result, file=csv.name, row.names=FALSE)
+    egoMF.dotplot <- dotplot(egoMF, x="count", showCategory=25)
+    ggsave(paste(i,"_MF_dotplot.pdf",sep=""), egoMF.dotplot, device = "pdf", width = 30, height = 20, units = "cm")  
+  }
+}
+
+##########---------- Configue
+### Dupr
+in.dir <- "/Volumes/Yolanda/Exp337CD25KONascent/3_DE-seq/0.1_original_GN/dupr"
+wk.dir <- "/Volumes/Yolanda/Exp337CD25KONascent/3_DE-seq/2_Pathway/dupr"
 
 ##########---------- Main
-in.dir <- "/Volumes/EXP337/Exp337CD25KONascent/3_DE-seq/DEseq2_out/1.2.1_pval_GN"
-wk.dir <- "/Volumes/EXP337/Exp337CD25KONascent/3_DE-seq/DEseq2_out/1.2.1.1_pval_GN_pathway"
-
 in.file.vec <- list.files(path=in.dir, pattern="*.csv")
-in.file.vec <- tail(in.file.vec, n=6)
-in.file.vec
+setwd(wk.dir)
 
-### Go-term dot plot
-if (FALSE) {
-  for (i in in.file.vec) {
-    #i <- in.file.vec[1]
-    print(paste("Start analysis of:", i, sep=" "))
-    setwd(wk.dir)
-    in.df <- read.csv(paste(in.dir, i, sep="/"))
-    genes.i <- as.character(unlist(in.df$gene_name))
-    genes.i <- unique(genes.i)
-    genes.i.id <- select(org.Mm.eg.db, genes.i, c("ENTREZID"), "ALIAS")
-    #genes.i.id$ENTREZID
-
-    egoBP <- enrichGO(gene = genes.i.id$ENTREZID, keyType = 'ENTREZID', OrgDb = org.Mm.eg.db, ont = "BP", pAdjustMethod = "none", pvalueCutoff = 0.05, readable = TRUE)
-    egoCC <- enrichGO(gene = genes.i.id$ENTREZID, keyType = 'ENTREZID', OrgDb = org.Mm.eg.db, ont = "CC", pAdjustMethod = "none", pvalueCutoff = 0.05, readable = TRUE)
-    egoMF <- enrichGO(gene = genes.i.id$ENTREZID, keyType = 'ENTREZID', OrgDb = org.Mm.eg.db, ont = "MF", pAdjustMethod = "none", pvalueCutoff = 0.05, readable = TRUE)
-    
-    # Dotplot visualization
-    if (!is.null(egoBP)){
-      pdf.name <- paste(i,"_BP_dotplot.pdf",sep="")
-      csv.name <- paste(i,"_BP_dotplot.csv",sep="")
-      write.csv(egoBP@result, file=csv.name, row.names=FALSE)
-      egoBP.dotplot <- dotplot(egoBP, x="count", showCategory=25)
-      ggsave(pdf.name, egoBP.dotplot, device = "pdf", width = 30, height = 20, units = "cm")  
-
-    }
-    if(!is.null(egoCC)){
-      csv.name <- paste(i,"_CC_dotplot.csv",sep="")
-      pdf.name <- paste(i,"_CC_dotplot.pdf",sep="")
-      write.csv(egoCC@result, file=csv.name, row.names=FALSE)
-      egoCC.dotplot <- dotplot(egoCC, x="count", showCategory=25)
-      ggsave(pdf.name, egoCC.dotplot, device = "pdf", width = 30, height = 20, units = "cm")  
-    }
-    if(!is.null(egoMF)){
-      csv.name <- paste(i,"_MF_dotplot.csv",sep="")
-      pdf.name <- paste(i,"_MF_dotplot.pdf",sep="")
-      write.csv(egoMF@result, file=csv.name, row.names=FALSE)
-      egoMF.dotplot <- dotplot(egoMF, x="count", showCategory=25)
-      ggsave(paste(i,"_MF_dotplot.pdf",sep=""), egoMF.dotplot, device = "pdf", width = 30, height = 20, units = "cm")  
-    }
+for (i in in.file.vec) {
+  if (grepl("KO", i) &&   grepl("WT", i)) {
+    print("WT vs KO")
+    padj.cutoff <- 0.05
+    pval.cutoff <- 1
+    log2fc.cutoff <- 0
+  } else {
+    padj.cutoff <- 0.01
+    pval.cutoff <- 1
+    log2fc.cutoff <- 3
   }
+  
+  i.simp.name <- gsub("_addGN.csv", "", i)
+  print(paste("Start analysis of:", i, sep=" "))
+  
+  in.df <- read_csv(paste(in.dir, i, sep="/")) %>% filter(padj <= padj.cutoff) %>% filter(pvalue <= pval.cutoff)
+  
+  ###----- Up in first group
+  in.df.up <- in.df %>% filter(log2FoldChange >= log2fc.cutoff)
+  genes.i.up <- in.df.up$gene_name
+  out.name.base <- paste(i.simp.name, "_up", sep="")
+  GO_run(genes.i.up, out.name.base)
+  
+  ###----- Dn in first group
+  in.df.dn <- in.df %>% filter(log2FoldChange <= -log2fc.cutoff)
+  genes.i.dn <- in.df.dn$gene_name
+  out.name.base <- paste(i.simp.name, "_dn", sep="")
+  GO_run(genes.i.dn, out.name.base)
 }
 
 

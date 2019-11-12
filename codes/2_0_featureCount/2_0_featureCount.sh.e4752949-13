@@ -1,0 +1,236 @@
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.5.2
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P /gpfs/group/pipkin/Exp337/srt_flt_bam/dupr ... ||
+||                                                                            ||
+||             Output file : 337-13_dupr_r.txt                                ||
+||                 Summary : 337-13_dupr_r.txt.summary                        ||
+||              Annotation : /gpfs/group/pipkin/Exp337/codes/GRCm38_exon_ ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 8                                                ||
+||                   Level : feature level                                    ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : counted                                          ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /gpfs/group/pipkin/Exp337/codes/GRCm38_exon_rmdup ... ||
+||    Features : 53576                                                        ||
+||    Meta-features : 53576                                                   ||
+||    Chromosomes/contigs : 21                                                ||
+||                                                                            ||
+|| Process BAM file /gpfs/group/pipkin/Exp337/srt_flt_bam/dupr/stranded_b ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 4535660                                               ||
+||    Successfully assigned fragments : 3548898 (78.2%)                       ||
+||    Running time : 0.29 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "337-13_dupr_r.txt"       ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.5.2
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P /gpfs/group/pipkin/Exp337/srt_flt_bam/dupr ... ||
+||                                                                            ||
+||             Output file : 337-13_dupr_f.txt                                ||
+||                 Summary : 337-13_dupr_f.txt.summary                        ||
+||              Annotation : /gpfs/group/pipkin/Exp337/codes/GRCm38_exon_ ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 8                                                ||
+||                   Level : feature level                                    ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : counted                                          ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /gpfs/group/pipkin/Exp337/codes/GRCm38_exon_rmdup ... ||
+||    Features : 54089                                                        ||
+||    Meta-features : 54089                                                   ||
+||    Chromosomes/contigs : 21                                                ||
+||                                                                            ||
+|| Process BAM file /gpfs/group/pipkin/Exp337/srt_flt_bam/dupr/stranded_b ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 4734045                                               ||
+||    Successfully assigned fragments : 3614908 (76.4%)                       ||
+||    Running time : 0.38 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "337-13_dupr_f.txt"       ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.5.2
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P /gpfs/group/pipkin/Exp337/srt_flt_bam/non_ ... ||
+||                                                                            ||
+||             Output file : 337-13_r.txt                                     ||
+||                 Summary : 337-13_r.txt.summary                             ||
+||              Annotation : /gpfs/group/pipkin/Exp337/codes/GRCm38_exon_ ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 8                                                ||
+||                   Level : feature level                                    ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : counted                                          ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /gpfs/group/pipkin/Exp337/codes/GRCm38_exon_rmdup ... ||
+||    Features : 53576                                                        ||
+||    Meta-features : 53576                                                   ||
+||    Chromosomes/contigs : 21                                                ||
+||                                                                            ||
+|| Process BAM file /gpfs/group/pipkin/Exp337/srt_flt_bam/non_dupr/strand ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 5455945                                               ||
+||    Successfully assigned fragments : 4248122 (77.9%)                       ||
+||    Running time : 0.08 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "337-13_r.txt"            ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.5.2
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P /gpfs/group/pipkin/Exp337/srt_flt_bam/non_ ... ||
+||                                                                            ||
+||             Output file : 337-13_f.txt                                     ||
+||                 Summary : 337-13_f.txt.summary                             ||
+||              Annotation : /gpfs/group/pipkin/Exp337/codes/GRCm38_exon_ ... ||
+||      Dir for temp files : ./                                               ||
+||                                                                            ||
+||                 Threads : 8                                                ||
+||                   Level : feature level                                    ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : counted                                          ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /gpfs/group/pipkin/Exp337/codes/GRCm38_exon_rmdup ... ||
+||    Features : 54089                                                        ||
+||    Meta-features : 54089                                                   ||
+||    Chromosomes/contigs : 21                                                ||
+||                                                                            ||
+|| Process BAM file /gpfs/group/pipkin/Exp337/srt_flt_bam/non_dupr/strand ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 9888792                                               ||
+||    Successfully assigned fragments : 8455655 (85.5%)                       ||
+||    Running time : 0.55 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "337-13_f.txt"            ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+

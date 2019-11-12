@@ -9,7 +9,7 @@ This is a temporary script file.
 import csv
 import os
 
-wk_dir = "/Volumes/EXP337/Exp337CD25KONascent/References"
+wk_dir = "/Volumes/Yolanda/Exp337CD25KONascent/References"
 os.chdir(wk_dir)
 
 ###----- Remove duplicates
@@ -151,9 +151,18 @@ with open(in_file, "r") as fin:
     
 
 
-
-
-
+###----- Convert to gtf
+in_file = "GRCm38_exon_rmdup_srt_cb_srt_dupr.csv"
+out_file = "GRCm38_exon_rmdup_srt_cb_srt_dupr.gtf"
+with open(in_file, "r") as fin:
+    with open(out_file, "w") as fout:
+        rfin = csv.reader(fin, delimiter = ",")
+        wfout = csv.writer(fout, delimiter = "\t")
+        next(rfin)
+        for row in rfin:
+            row_new = row[:8] + ['ID \"{}\";'.format(row[8].replace("ID=", ""))]
+            wfout.writerow(row_new)
+        
 
 
 
