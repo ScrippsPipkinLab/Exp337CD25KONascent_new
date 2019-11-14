@@ -1,0 +1,4 @@
+ID,Description,setSize,enrichmentScore,NES,pvalue,p.adjust,qvalues,rank,leading_edge,core_enrichment
+Yao_EXH,Yao_EXH,6,0.6235110190236791,2.6473183514607865,1.582528881152081e-4,4.7475866434562434e-4,1.6658198748969276e-4,102,"tags=90%, list=32%, signal=65%",Irf8/Irf8/Irf8/Irf8/Irf8/Il12rb2/Il12rb2/Frmd4b/Agpat4/Agpat4/Cish/Agpat4/Agpat4/Cish/Agpat4/Cish/Cish/Cish
+Yao_MP,Yao_MP,3,0.4503217555897747,1.7084166028122492,0.028537455410225922,0.04280618311533888,0.015019713373803116,118,"tags=80%, list=37%, signal=53%",Bcl2/Bcl2/Inpp4b/Inpp4b/Inpp4b/Inpp4b/Inpp4b/Inpp4b/Inpp4b/Inpp4b/Inpp4b/Inpp4b
+Yao_PRO,Yao_PRO,10,0.2041530216223525,1.0221471569123786,0.4230769230769231,0.4230769230769231,0.14844804318488528,16,"tags=16%, list=5%, signal=17%",Lif/Lif/Lif/Bcl2/Bcl2
