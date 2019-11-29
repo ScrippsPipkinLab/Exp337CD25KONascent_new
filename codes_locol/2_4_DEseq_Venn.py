@@ -18,7 +18,7 @@ from matplotlib_venn import venn3, venn3_circles, venn2
 import matplotlib.pyplot as plt
 
 ########## Self defined functions ##########
-def venn2_de_ref1000(in_dict, out_name, padj_cutoff, log2fc_cutoff):
+def venn2_de_ref1000(in_dict, out_name, pval_cutoff, log2fc_cutoff):
     #padj_cutoff = 0.05
     #log2fc_cutoff = 1
     #in_dict = {"wt6h_0h":wt6h_0h, "ko6h_0h":ko6h_0h}
@@ -28,12 +28,12 @@ def venn2_de_ref1000(in_dict, out_name, padj_cutoff, log2fc_cutoff):
     f1, f2 = in_dict[f1_name], in_dict[f2_name]
     
     tb1 = pd.read_csv(f1)
-    tb1_sig = tb1[tb1['padj'] <= padj_cutoff]
+    tb1_sig = tb1[tb1['pvalue'] <= pval_cutoff]
     tb1_sig_up = tb1_sig[tb1_sig['log2FoldChange'] >= log2fc_cutoff]
     tb1_sig_dn = tb1_sig[tb1_sig['log2FoldChange'] <= - log2fc_cutoff]
     
     tb2 = pd.read_csv(f2)
-    tb2_sig = tb2[tb2['padj'] <= padj_cutoff]
+    tb2_sig = tb2[tb2['pvalue'] <= pval_cutoff]
     tb2_sig_up = tb2_sig[tb2_sig['log2FoldChange'] >= log2fc_cutoff]
     tb2_sig_dn = tb2_sig[tb2_sig['log2FoldChange'] <= - log2fc_cutoff]
     
@@ -77,25 +77,25 @@ wt_ko_48h = in_base + "WT_48h_vs_KO_48h_addGN.csv"
 
 use_dict = {"wt6h_0h":wt6h_0h, "ko6h_0h":ko6h_0h}
 plot_name = "WT6h-0h__vs__KO6h-0h"
-venn2_de_ref1000(use_dict, plot_name, 0.05, 0)
+venn2_de_ref1000(use_dict, plot_name, 0.05, 1)
 
 use_dict = {"wt24h_0h":wt24h_0h, "ko24h_0h":ko24h_0h}
 plot_name = "WT24h-0h__vs__KO24h-0h"
-venn2_de_ref1000(use_dict, plot_name, 0.05, 0)
+venn2_de_ref1000(use_dict, plot_name, 0.05, 1)
 
 use_dict = {"wt48h_0h":wt48h_0h, "ko48h_0h":ko48h_0h}
 plot_name = "WT48h-0h__vs__KO48h-0h"
-venn2_de_ref1000(use_dict, plot_name, 0.05, 0)
+venn2_de_ref1000(use_dict, plot_name, 0.05, 1)
 
 ###----- WT vs KO
 use_dict = {"wt6h_0h":wt6h_0h, "wt6h_ko6h":wt_ko_6h}
 plot_name = "WT6h-0h__vs__WT6h-KO6h"
-venn2_de_ref1000(use_dict, plot_name, 0.05, 0)
+venn2_de_ref1000(use_dict, plot_name, 0.05, 1)
 
 use_dict = {"wt24h_0h":wt24h_0h, "wt24h_ko24h":wt_ko_24h}
 plot_name = "WT24h-0h__vs__WT24h-KO24h"
-venn2_de_ref1000(use_dict, plot_name, 0.05, 0)
+venn2_de_ref1000(use_dict, plot_name, 0.05, 1)
 
 use_dict = {"wt48h_0h":wt48h_0h, "wt48h_ko48h":wt_ko_48h}
 plot_name = "WT48h-0h__vs__WT48h-KO48h"
-venn2_de_ref1000(use_dict, plot_name, 0.05, 0)
+venn2_de_ref1000(use_dict, plot_name, 0.05, 1)

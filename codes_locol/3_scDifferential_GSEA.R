@@ -96,7 +96,8 @@ GSEA_analysis_d3e <- function(de_df, out_name, gs_file, pval_cutoff) {
 
   
 ###----- Use nondupr
-gs.file <- "/Volumes/Yolanda/Exp337CD25KONascent/2_DE-seq/3_GSEA_source/gsea_WT-vs-CD25KO_nondupr.csv"
+#gs.file <- "/Volumes/Yolanda/Exp337CD25KONascent/2_DE-seq/3_GSEA_source/gsea_WT-vs-CD25KO_nondupr.csv"
+gs.file <- "/Volumes/Yolanda/Exp349_shBrg1_RNAseq/2_DEseq/3_GSEA_source/gsea_Brg1-Ccnt1-d5.csv"
 
 ###----- With DEseq2
 if (FALSE) {
@@ -126,8 +127,9 @@ if (FALSE) {
 }
 
 ###----- With D3E
-if (FALSE) {
-  wk.dir <- "/Volumes/Yolanda/Exp337CD25KONascent/3_scGSEA/nondupr_scD3E"
+if (TRUE) {
+  #wk.dir <- "/Volumes/Yolanda/Exp337CD25KONascent/3_scGSEA/nondupr_scD3E"
+  wk.dir <- "/Volumes/Yolanda/Exp349_shBrg1_RNAseq/3_scGSEA"
   in.dir <- "/Volumes/Yolanda/Exp334CD25KOSc/4_D3E/0_clusterComparison_P14WT/1_csv"
   setwd(wk.dir)
   
@@ -150,4 +152,25 @@ if (FALSE) {
   cp.file <- "P14WT_C4_vs_C9_fix_meanlog2fc.csv"
   cp.tb <- read_csv(paste(in.dir, cp.file, sep="/"))
   GSEA_analysis_d3e(cp.tb, cp, gs.file, 0.05)
+  
+  cp <- "p3_vs_p6"
+  cp.file <- "P14WT_C2_vs_C8_fix_meanlog2fc.csv"
+  cp.tb <- read_csv(paste(in.dir, cp.file, sep="/"))
+  GSEA_analysis_d3e(cp.tb, cp, gs.file, 0.05)
+  
+  cp <- "p7_vs_p6"
+  cp.file <- "P14WT_C2_vs_C7_fix_meanlog2fc.csv"
+  cp.tb <- read_csv(paste(in.dir, cp.file, sep="/"))
+  GSEA_analysis_d3e(cp.tb, cp, gs.file, 0.05)
+  
+  cp <- "p4_vs_p5"
+  cp.file <- "P14WT_C1_vs_C4_fix_meanlog2fc.csv"
+  cp.tb <- read_csv(paste(in.dir, cp.file, sep="/"))
+  GSEA_analysis_d3e(cp.tb, cp, gs.file, 0.05)
+  
+  cp <- "p7_vs_p4"
+  cp.file <- "P14WT_C4_vs_C7_fix_meanlog2fc.csv"
+  cp.tb <- read_csv(paste(in.dir, cp.file, sep="/"))
+  GSEA_analysis_d3e(cp.tb, cp, gs.file, 0.05)
+  
 }

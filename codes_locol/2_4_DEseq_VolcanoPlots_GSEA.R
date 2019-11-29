@@ -117,9 +117,9 @@ vol_plot <- function(in_file, mlog10p_cutoff, log2fc_cutoff,
     
     if (nrow(anno_tab) > 0) {
       anno_tab_KO <- anno_tab %>% filter(log2FoldChange > 0)
-      anno_tab_KO$use_color <- rep(use_col_vec[1], nrow(anno_tab_KO))
+      anno_tab_KO$use_color <- rep(use_col_vec[2], nrow(anno_tab_KO))
       anno_tab_WT <- anno_tab %>% filter(log2FoldChange < 0)
-      anno_tab_WT$use_color <- rep(use_col_vec[2], nrow(anno_tab_WT))
+      anno_tab_WT$use_color <- rep(use_col_vec[1], nrow(anno_tab_WT))
       anno_tab <- anno_tab_WT %>% bind_rows(anno_tab_KO)
     }
     
@@ -328,7 +328,7 @@ GSEA_sum_new <- function(file_list, outname, wid, hei, input_order_vec, path_ord
 ######################################## Main ########################################
 
 ###----- Volcano plots
-if (FALSE) {
+if (TRUE) {
   wk.dir <- "/Volumes/Yolanda/Exp337CD25KONascent/2_DE-seq/4_DE_volcanoPlots_GSEA/nondupr/0_vplots"
   setwd(wk.dir)
   
@@ -353,7 +353,7 @@ if (FALSE) {
     # compare_pair, wid, hei, 
     # virtual_p_add, use_density
     if (grepl("KO", file.i) &&   grepl("WT", file.i)) {
-      lims.i <- vol_plot(file.i, 1, 1, 
+      lims.i <- vol_plot(file.i, 1.30103, 1, 
                          genes.use, 5, 15, 
                          comp.pair, 4.5, 4.5,
                          TRUE, FALSE)
@@ -401,7 +401,6 @@ if (FALSE) {
     GSEA_analysis(gsea.gene.list, gsea_file, gs_file)
   }
 }
-
 
 ###----- GSEA summary: WT versus KO -- GSE88987-Exp276
 if (FALSE) {
