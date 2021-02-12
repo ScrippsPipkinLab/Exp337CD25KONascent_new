@@ -14,7 +14,6 @@ Created on Tue Apr 30 16:30:39 2019
 import os
 import csv
 import glob
-from astropy.io import ascii
 import pandas as pd
 
 ########## Self defined functions ##########
@@ -33,37 +32,36 @@ def TIDtoGN(fileX, idList, gnList):
                 wfout.writerow(row)
 
 ########## Main ##########
-
-GRCm38_ref = "/Volumes/Yolanda/Exp337CD25KONascent/References/GRCm38_exonid_genename.csv"
-reftab = ascii.read(GRCm38_ref)
-id_list = list(reftab.columns[0])
-gn_list = list(reftab.columns[1])
-
+GRCm38_ref = "/media/pipkin/Yolanda/Exp337CD25KONascent/References/GRCm38_exonid_genename.csv"
+reftab = pd.read_csv(GRCm38_ref)
+id_list = reftab["Exon stable ID"].tolist()
+gn_list = reftab["Gene name"].tolist()
 
 ###----- Duplicate removed
-wk_dir = "/Volumes/Yolanda/Exp337CD25KONascent/3_DE-seq/dupr"
-os.chdir(wk_dir)
-filelist = glob.glob("*h.csv")
-TIDtoGN(filelist[0], id_list, gn_list)
+if False:
+    wk_dir = "/media/pipkin/Yolanda/Exp337CD25KONascent/3_DE-seq/dupr"
+    os.chdir(wk_dir)
+    filelist = glob.glob("*h.csv")
+    TIDtoGN(filelist[0], id_list, gn_list)
 
-tb_0 = pd.read_csv(filelist[0])
-names_0 = tb_0.iloc[:, 0]
-tb_0_new = pd.read_csv(filelist[0].replace(".csv", "_GN.csv"))
-genes_0 = list(tb_0_new.iloc[:, 0])
-for i in range(0, len(filelist)):
-    out_name = filelist[i].replace(".csv", "_addGN.csv")
-    tb_i = pd.read_csv(filelist[i])
-    names_i = tb_i.iloc[:, 0]
-    names_match = list(names_0 == names_i)
-    if False not in names_match:
-        tb_i["gene_name"] = genes_0
-        tb_i.to_csv(out_name, index=False)
-    else:
-        print("File %s has different name order..." %i)
+    tb_0 = pd.read_csv(filelist[0])
+    names_0 = tb_0.iloc[:, 0]
+    tb_0_new = pd.read_csv(filelist[0].replace(".csv", "_GN.csv"))
+    genes_0 = list(tb_0_new.iloc[:, 0])
+    for i in range(0, len(filelist)):
+        out_name = filelist[i].replace(".csv", "_addGN.csv")
+        tb_i = pd.read_csv(filelist[i])
+        names_i = tb_i.iloc[:, 0]
+        names_match = list(names_0 == names_i)
+        if False not in names_match:
+            tb_i["gene_name"] = genes_0
+            tb_i.to_csv(out_name, index=False)
+        else:
+            print("File %s has different name order..." %i)
 
 
 ###----- Duplicate not removed
-wk_dir = "/Volumes/Yolanda/Exp337CD25KONascent/3_DE-seq/nondupr"
+wk_dir = '/media/pipkin/Yolanda/Exp337CD25KONascent/2_DE-seq/0_original/nondupr/0_original'
 os.chdir(wk_dir)
 filelist = glob.glob("*h.csv")
 TIDtoGN(filelist[0], id_list, gn_list)
