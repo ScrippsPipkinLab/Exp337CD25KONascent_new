@@ -1,8 +1,0 @@
-[E::hts_open_format] fail to open file 'bam_name_srt'
-samtools view: failed to open "bam_name_srt" for reading: No such file or directory
-[E::sam_parse1] missing SAM header
-[W::sam_read1] parse error at line 1
-[main_samview] truncated file.
-[E::sam_parse1] missing SAM header
-[W::sam_read1] parse error at line 1
-[main_samview] truncated file.
