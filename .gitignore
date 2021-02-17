@@ -1,5 +1,11 @@
 # Large reference files
-/References/mart_export_20190509.csv
+Mus_musculus.GRCm38.102.exon.gff3
+Mus_musculus.GRCm38.102.exon.simp.gff3
+Mus_musculus.GRCm38.102.gff3
+Mus_musculus.GRCm38.102.mRNA.gff3
+Mus_musculus.GRCm38.102.mRNA.simp.gff3
+
 
 # Ignore Mac generated resource fork files
 ._*
+
