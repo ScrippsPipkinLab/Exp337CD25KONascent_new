@@ -15,13 +15,41 @@ module load samtools
 module load bedtools
 module load python
 module load ucsc_tools
-module load bamtools
 # Split strand reference: https://broadinstitute.github.io/picard/explain-flags.html
 
 INDIR=/gpfs/group/pipkin/hdiao/Exp337/0_fastq
 BAMDIR=/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2
 
-##### Last step: failed to load bamtools
+##### Last step: failed to convert srt flt sam to bam
+##### Redo: Filter
+sam_name=$BAMDIR/337_${SLURM_ARRAY_TASK_ID}.sam
+bam_name_srt=$BAMDIR/337_${SLURM_ARRAY_TASK_ID}_srt.bam
+sam_name_srt_flt=$BAMDIR/337_${SLURM_ARRAY_TASK_ID}_srt_flt.sam
+bam_name_srt_flt=$BAMDIR/337_${SLURM_ARRAY_TASK_ID}_srt_flt.bam
+
+head -n 1000 $sam_name | grep "^@" > $sam_name_srt_flt
+samtools view $bam_name_srt | awk '{if ($3 ~/'X'/ || $3 ~/'Y'/ || $3 ~/^[0-9]+$/ ) print $0}' >> $sam_name_srt_flt
+samtools view -bS -h $sam_name_srt_flt > $bam_name_srt_flt
+samtools index $bam_name_srt_flt
+
+
+##### Convert to bw
+chrom_sizes=/gpfs/group/pipkin/hdiao/ref_resources/mm/release102/GRCm38.genome.sizes.withChr
+
+bam_name_srt_flt=$BAMDIR/337_${SLURM_ARRAY_TASK_ID}_srt_flt.bam
+bdg_name_srt_flt=$BAMDIR/337_${SLURM_ARRAY_TASK_ID}_srt_flt.bdg
+bdg_name_srt_flt_chr=$BAMDIR/337_${SLURM_ARRAY_TASK_ID}_srt_flt_chr.bdg
+bdg_name_srt_flt_chr_srt=$BAMDIR/337_${SLURM_ARRAY_TASK_ID}_srt_flt_chr_srt.bdg
+bw_name_srt_flt_chr_srt=$BAMDIR/337_${SLURM_ARRAY_TASK_ID}_srt_flt.bw
+
+#---- Bam to bdg
+bamCoverage --bam $bam_name_srt_flt -o $bdg_name_srt_flt  --binSize 10 --normalizeUsing RPGC --effectiveGenomeSize 2652783500 --extendReads --outFileFormat bedgraph 
+#---- Bdg add chr
+awk '{print "chr"$1 "\t" $2 "\t" $3 "\t" $4}' $bdg_name_srt_flt > $bdg_name_srt_flt_chr
+#---- Sort bdg
+LC_COLLATE=C sort -k1,1 -k2,2n $bdg_name_srt_flt_chr > $bdg_name_srt_flt_chr_srt
+#---- Bdg to bw
+bedGraphToBigWig $bdg_name_srt_flt_chr_srt $chrom_sizes $bw_name_srt_flt_chr_srt
 
 ##### Split strand
 #---- Names
@@ -60,17 +88,17 @@ bw_name_srt_flt_neg_chr_srt=$BAMDIR/337_${SLURM_ARRAY_TASK_ID}_neg.bw
 # Remove reads that are unmapped
 # Remove reads whose mates are unmapped
 # Keep only reads that are properly paired
-#samtools view -F 0x4 -h -b $bam_name_srt_flt > $bam_name_srt_flt_Rm 
-#samtools view -F 0x8 -h -b $bam_name_srt_flt_Rm > $bam_name_srt_flt_RmMm 
-#samtools view -f 0x2 -h -b $bam_name_srt_flt_RmMm > $bam_name_srt_flt_RmMm_cor 
+samtools view -F 0x4 -h -b $bam_name_srt_flt > $bam_name_srt_flt_Rm 
+samtools view -F 0x8 -h -b $bam_name_srt_flt_Rm > $bam_name_srt_flt_RmMm 
+samtools view -f 0x2 -h -b $bam_name_srt_flt_RmMm > $bam_name_srt_flt_RmMm_cor 
 
 # Filter out r1 / r2 seperatly
-#samtools view -f 0x40 -h -b $bam_name_srt_flt_RmMm_cor > $bam_name_srt_flt_r1
-#samtools view -f 0x80 -h -b $bam_name_srt_flt_RmMm_cor > $bam_name_srt_flt_r2
+samtools view -f 0x40 -h -b $bam_name_srt_flt_RmMm_cor > $bam_name_srt_flt_r1
+samtools view -f 0x80 -h -b $bam_name_srt_flt_RmMm_cor > $bam_name_srt_flt_r2
 
 # Filter out r1 that are positive / r2 that are negative
-#samtools view -f 0x20 -h -b $bam_name_srt_flt_r1 > $bam_name_srt_flt_r1_F
-#samtools view -f 0x10 -h -b $bam_name_srt_flt_r2 > $bam_name_srt_flt_r2_R
+samtools view -f 0x20 -h -b $bam_name_srt_flt_r1 > $bam_name_srt_flt_r1_F
+samtools view -f 0x10 -h -b $bam_name_srt_flt_r2 > $bam_name_srt_flt_r2_R
 bamtools merge -in $bam_name_srt_flt_r1_F -in $bam_name_srt_flt_r2_R -out $bam_name_srt_flt_pos
 
 # Filter out r1 that are negative / r2 that are positive

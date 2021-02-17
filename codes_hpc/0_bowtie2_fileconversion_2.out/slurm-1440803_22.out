@@ -1,0 +1,20 @@
+bamtools merge ERROR: could not open input BAM file(s)... Aborting.
+[main_samview] fail to read the header from "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_r1.bam".
+[main_samview] fail to read the header from "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_r2.bam".
+bamtools merge ERROR: could not open input BAM file(s)... Aborting.
+[E::hts_open_format] Failed to open file "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_pos.bam" : No such file or directory
+samtools sort: can't open "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_pos.bam": No such file or directory
+[E::hts_open_format] Failed to open file "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_neg.bam" : No such file or directory
+samtools sort: can't open "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_neg.bam": No such file or directory
+[E::hts_open_format] Failed to open file "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_pos_srt.bam" : No such file or directory
+samtools index: failed to open "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_pos_srt.bam": No such file or directory
+[E::hts_open_format] Failed to open file "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_neg_srt.bam" : No such file or directory
+samtools index: failed to open "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_neg_srt.bam": No such file or directory
+[E::hts_open_format] Failed to open file "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_pos_srt.bam" : No such file or directory
+The file '/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_pos_srt.bam' does not exist
+[E::hts_open_format] Failed to open file "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_neg_srt.bam" : No such file or directory
+The file '/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_neg_srt.bam' does not exist
+awk: fatal: cannot open file `/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_pos.bdg' for reading (No such file or directory)
+awk: fatal: cannot open file `/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_22_srt_flt_neg.bdg' for reading (No such file or directory)
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)

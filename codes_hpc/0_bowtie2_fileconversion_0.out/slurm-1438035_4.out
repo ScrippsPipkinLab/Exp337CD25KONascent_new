@@ -1,0 +1,267 @@
+Multicore support not enabled. Proceeding with single-core trimming.
+Path to Cutadapt set as: 'cutadapt' (default)
+Cutadapt seems to be working fine (tested command 'cutadapt --version')
+No quality encoding type selected. Assuming that the data provided uses Sanger encoded Phred scores (default)
+
+
+
+AUTO-DETECTING ADAPTER TYPE
+===========================
+Attempting to auto-detect adapter type from the first 1 million sequences of the first file (>> /gpfs/group/pipkin/hdiao/Exp337/0_fastq/337_4_1_Total.fastq <<)
+
+Found perfect matches for the following adapter sequences:
+Adapter type	Count	Sequence	Sequences analysed	Percentage
+Nextera	4	CTGTCTCTTATA	1000000	0.00
+Illumina	3	AGATCGGAAGAGC	1000000	0.00
+smallRNA	0	TGGAATTCTCGG	1000000	0.00
+Using Nextera adapter for trimming (count: 4). Second best hit was Illumina (count: 3)
+
+Writing report to '337_4_1_Total.fastq_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: /gpfs/group/pipkin/hdiao/Exp337/0_fastq/337_4_1_Total.fastq
+Trimming mode: paired-end
+Trim Galore version: 0.6.1
+Cutadapt version: 1.18
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'CTGTCTCTTATA' (Nextera Transposase sequence; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 24 bp
+
+Writing final adapter and quality trimmed output to 337_4_1_Total_trimmed.fq
+
+
+  >>> Now performing quality (cutoff '-q 20') and adapter trimming in a single pass for the adapter sequence: 'CTGTCTCTTATA' from file /gpfs/group/pipkin/hdiao/Exp337/0_fastq/337_4_1_Total.fastq <<< 
+10000000 sequences processed
+This is cutadapt 1.18 with Python 2.7.11
+Command line parameters: -j 1 -e 0.1 -q 20 -O 3 -a CTGTCTCTTATA /gpfs/group/pipkin/hdiao/Exp337/0_fastq/337_4_1_Total.fastq
+Processing reads on 1 core in single-end mode ...
+Finished in 347.77 s (18 us/read; 3.26 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:              18,874,649
+Reads with adapters:                   481,065 (2.5%)
+Reads written (passing filters):    18,874,649 (100.0%)
+
+Total basepairs processed:   754,985,960 bp
+Quality-trimmed:               1,194,761 bp (0.2%)
+Total written (filtered):    752,065,007 bp (99.6%)
+
+=== Adapter 1 ===
+
+Sequence: CTGTCTCTTATA; Type: regular 3'; Length: 12; Trimmed: 481065 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-12 bp: 1
+
+Bases preceding removed adapters:
+  A: 23.3%
+  C: 24.6%
+  G: 23.7%
+  T: 28.4%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	356813	294916.4	0	356813
+4	83553	73729.1	0	83553
+5	20537	18432.3	0	20537
+6	8683	4608.1	0	8683
+7	3216	1152.0	0	3216
+8	1413	288.0	0	1413
+9	1115	72.0	0	352 763
+10	1163	18.0	1	33 1130
+11	477	4.5	1	10 467
+12	203	1.1	1	1 202
+13	137	1.1	1	2 135
+14	155	1.1	1	4 151
+15	149	1.1	1	2 147
+16	159	1.1	1	3 156
+17	114	1.1	1	1 113
+18	124	1.1	1	1 123
+19	125	1.1	1	3 122
+20	116	1.1	1	3 113
+21	145	1.1	1	0 145
+22	114	1.1	1	2 112
+23	158	1.1	1	1 157
+24	115	1.1	1	2 113
+25	124	1.1	1	0 124
+26	142	1.1	1	2 140
+27	120	1.1	1	1 119
+28	164	1.1	1	4 160
+29	201	1.1	1	4 197
+30	175	1.1	1	1 174
+31	90	1.1	1	1 89
+32	166	1.1	1	0 166
+33	173	1.1	1	4 169
+34	99	1.1	1	2 97
+35	142	1.1	1	2 140
+36	80	1.1	1	1 79
+37	144	1.1	1	5 139
+38	112	1.1	1	0 112
+39	222	1.1	1	10 212
+40	127	1.1	1	3 124
+
+
+RUN STATISTICS FOR INPUT FILE: /gpfs/group/pipkin/hdiao/Exp337/0_fastq/337_4_1_Total.fastq
+=============================================
+18874649 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Writing report to '337_4_2_Total.fastq_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: /gpfs/group/pipkin/hdiao/Exp337/0_fastq/337_4_2_Total.fastq
+Trimming mode: paired-end
+Trim Galore version: 0.6.1
+Cutadapt version: 1.18
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'CTGTCTCTTATA' (Nextera Transposase sequence; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 24 bp
+
+Writing final adapter and quality trimmed output to 337_4_2_Total_trimmed.fq
+
+
+  >>> Now performing quality (cutoff '-q 20') and adapter trimming in a single pass for the adapter sequence: 'CTGTCTCTTATA' from file /gpfs/group/pipkin/hdiao/Exp337/0_fastq/337_4_2_Total.fastq <<< 
+10000000 sequences processed
+This is cutadapt 1.18 with Python 2.7.11
+Command line parameters: -j 1 -e 0.1 -q 20 -O 3 -a CTGTCTCTTATA /gpfs/group/pipkin/hdiao/Exp337/0_fastq/337_4_2_Total.fastq
+Processing reads on 1 core in single-end mode ...
+Finished in 350.10 s (19 us/read; 3.23 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:              18,874,649
+Reads with adapters:                   609,305 (3.2%)
+Reads written (passing filters):    18,874,649 (100.0%)
+
+Total basepairs processed:   754,985,960 bp
+Quality-trimmed:               3,013,781 bp (0.4%)
+Total written (filtered):    749,756,500 bp (99.3%)
+
+=== Adapter 1 ===
+
+Sequence: CTGTCTCTTATA; Type: regular 3'; Length: 12; Trimmed: 609305 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-12 bp: 1
+
+Bases preceding removed adapters:
+  A: 19.1%
+  C: 26.5%
+  G: 24.2%
+  T: 30.2%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	427090	294916.4	0	427090
+4	123485	73729.1	0	123485
+5	32781	18432.3	0	32781
+6	10350	4608.1	0	10350
+7	4983	1152.0	0	4983
+8	1055	288.0	0	1055
+9	1277	72.0	0	251 1026
+10	2839	18.0	1	46 2793
+11	557	4.5	1	50 507
+12	229	1.1	1	2 227
+13	167	1.1	1	1 166
+14	210	1.1	1	0 210
+15	147	1.1	1	2 145
+16	179	1.1	1	2 177
+17	173	1.1	1	4 169
+18	160	1.1	1	3 157
+19	158	1.1	1	3 155
+20	126	1.1	1	3 123
+21	197	1.1	1	6 191
+22	227	1.1	1	0 227
+23	196	1.1	1	0 196
+24	134	1.1	1	1 133
+25	137	1.1	1	1 136
+26	163	1.1	1	0 163
+27	147	1.1	1	3 144
+28	186	1.1	1	4 182
+29	236	1.1	1	4 232
+30	142	1.1	1	1 141
+31	103	1.1	1	2 101
+32	156	1.1	1	0 156
+33	194	1.1	1	2 192
+34	162	1.1	1	3 159
+35	233	1.1	1	2 231
+36	100	1.1	1	1 99
+37	135	1.1	1	4 131
+38	100	1.1	1	1 99
+39	222	1.1	1	2 220
+40	169	1.1	1	0 169
+
+
+RUN STATISTICS FOR INPUT FILE: /gpfs/group/pipkin/hdiao/Exp337/0_fastq/337_4_2_Total.fastq
+=============================================
+18874649 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Validate paired-end files 337_4_1_Total_trimmed.fq and 337_4_2_Total_trimmed.fq
+file_1: 337_4_1_Total_trimmed.fq, file_2: 337_4_2_Total_trimmed.fq
+
+
+>>>>> Now validing the length of the 2 paired-end infiles: 337_4_1_Total_trimmed.fq and 337_4_2_Total_trimmed.fq <<<<<
+Writing validated paired-end read 1 reads to 337_4_1_Total_val_1.fq
+Writing validated paired-end read 2 reads to 337_4_2_Total_val_2.fq
+
+Total number of sequences analysed: 18874649
+
+Number of sequence pairs removed because at least one read was shorter than the length cutoff (24 bp): 50958 (0.27%)
+
+Deleting both intermediate output files 337_4_1_Total_trimmed.fq and 337_4_2_Total_trimmed.fq
+
+====================================================================================================
+
+18823691 reads; of these:
+  18823691 (100.00%) were paired; of these:
+    2513937 (13.36%) aligned concordantly 0 times
+    14260002 (75.76%) aligned concordantly exactly 1 time
+    2049752 (10.89%) aligned concordantly >1 times
+    ----
+    2513937 pairs aligned concordantly 0 times; of these:
+      317855 (12.64%) aligned discordantly 1 time
+    ----
+    2196082 pairs aligned 0 times concordantly or discordantly; of these:
+      4392164 mates make up the pairs; of these:
+        3385304 (77.08%) aligned 0 times
+        663450 (15.11%) aligned exactly 1 time
+        343410 (7.82%) aligned >1 times
+91.01% overall alignment rate
+[bam_sort_core] merging from 10 files and 1 in-memory blocks...
+[E::sam_parse1] no SQ lines present in the header
+[main_samview] truncated file.
+The file '/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt.bam' does not have BAM or CRAM format 
+awk: fatal: cannot open file `/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt.bdg' for reading (No such file or directory)
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
+/var/spool/slurm/d/job1438039/slurm_script: line 137: bamtools: command not found
+/var/spool/slurm/d/job1438039/slurm_script: line 142: bamtools: command not found
+[E::hts_open_format] Failed to open file "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_pos.bam" : No such file or directory
+samtools sort: can't open "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_pos.bam": No such file or directory
+[E::hts_open_format] Failed to open file "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_neg.bam" : No such file or directory
+samtools sort: can't open "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_neg.bam": No such file or directory
+[E::hts_open_format] Failed to open file "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_pos_srt.bam" : No such file or directory
+samtools index: failed to open "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_pos_srt.bam": No such file or directory
+[E::hts_open_format] Failed to open file "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_neg_srt.bam" : No such file or directory
+samtools index: failed to open "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_neg_srt.bam": No such file or directory
+[E::hts_open_format] Failed to open file "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_pos_srt.bam" : No such file or directory
+The file '/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_pos_srt.bam' does not exist
+[E::hts_open_format] Failed to open file "/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_neg_srt.bam" : No such file or directory
+The file '/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_neg_srt.bam' does not exist
+awk: fatal: cannot open file `/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_pos.bdg' for reading (No such file or directory)
+awk: fatal: cannot open file `/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_4_srt_flt_neg.bdg' for reading (No such file or directory)
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)

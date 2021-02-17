@@ -1,0 +1,120 @@
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.5.2
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P /gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/ ... ||
+||                                                                            ||
+||             Output file : /gpfs/group/pipkin/hdiao/Exp337/2_featureCou ... ||
+||                 Summary : /gpfs/group/pipkin/hdiao/Exp337/2_featureCou ... ||
+||              Annotation : /gpfs/group/pipkin/hdiao/Exp337/codes_hpc/Mu ... ||
+||      Dir for temp files : /gpfs/group/pipkin/hdiao/Exp337/2_featureCounts  ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : feature level                                    ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : counted                                          ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : not counted                                      ||
+||        Both ends mapped : required                                         ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /gpfs/group/pipkin/hdiao/Exp337/codes_hpc/Mus_mus ... ||
+||    Features : 21807                                                        ||
+||    Meta-features : 21807                                                   ||
+||    Chromosomes/contigs : 21                                                ||
+||                                                                            ||
+|| Process BAM file /gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_19_srt_ ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 3737701                                               ||
+||    Successfully assigned fragments : 3343598 (89.5%)                       ||
+||    Running time : 0.76 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/gpfs/group/pipkin/hdia  ||
+|| o/Exp337/2_featureCounts/337_19_pos_mRNA.txt"                              ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.5.2
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           P /gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/ ... ||
+||                                                                            ||
+||             Output file : /gpfs/group/pipkin/hdiao/Exp337/2_featureCou ... ||
+||                 Summary : /gpfs/group/pipkin/hdiao/Exp337/2_featureCou ... ||
+||              Annotation : /gpfs/group/pipkin/hdiao/Exp337/codes_hpc/Mu ... ||
+||      Dir for temp files : /gpfs/group/pipkin/hdiao/Exp337/2_featureCounts  ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : feature level                                    ||
+||              Paired-end : yes                                              ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : counted                                          ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : not counted                                      ||
+||        Both ends mapped : required                                         ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /gpfs/group/pipkin/hdiao/Exp337/codes_hpc/Mus_mus ... ||
+||    Features : 21807                                                        ||
+||    Meta-features : 21807                                                   ||
+||    Chromosomes/contigs : 21                                                ||
+||                                                                            ||
+|| Process BAM file /gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_19_srt_ ... ||
+||    Paired-end reads are included.                                          ||
+||    Assign fragments (read pairs) to features...                            ||
+||                                                                            ||
+||    WARNING: reads from the same pair were found not adjacent to each       ||
+||             other in the input (due to read sorting by location or         ||
+||             reporting of multi-mapping read pairs).                        ||
+||                                                                            ||
+||    Read re-ordering is performed.                                          ||
+||                                                                            ||
+||    Total fragments : 7396801                                               ||
+||    Successfully assigned fragments : 6997484 (94.6%)                       ||
+||    Running time : 1.73 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/gpfs/group/pipkin/hdia  ||
+|| o/Exp337/2_featureCounts/337_19_neg_mRNA.txt"                              ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
