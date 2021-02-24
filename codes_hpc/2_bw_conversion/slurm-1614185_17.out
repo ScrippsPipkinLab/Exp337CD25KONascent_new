@@ -1,0 +1,29 @@
+[bam_sort_core] merging from 11 files and 1 in-memory blocks...
+normalization: 1x (effective genome size 2652783500)
+minFragmentLength: 0
+verbose: False
+out_file_for_raw_data: None
+numberOfSamples: None
+bedFile: None
+bamFilesList: ['/gpfs/group/pipkin/hdiao/Exp337/1_bowtie2/337_17_srt_flt_posneg_srt.bam']
+numberOfProcessors: 1
+samFlag_exclude: None
+save_data: False
+stepSize: 10
+smoothLength: None
+blackListFileName: None
+center_read: False
+skipZeroOverZero: False
+ignoreDuplicates: False
+defaultFragmentLength: 200
+chrsToSkip: []
+region: None
+maxPairedFragmentLength: 800
+samFlag_include: None
+binLength: 10
+maxFragmentLength: 0
+minMappingQuality: None
+zerosToNans: False
+----------------------------------------
+Useage:
+$python Ensembl_bed_to_usce_bed.py ensembl_bed_file

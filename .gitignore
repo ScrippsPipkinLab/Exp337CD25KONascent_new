@@ -5,7 +5,6 @@ Mus_musculus.GRCm38.102.gff3
 Mus_musculus.GRCm38.102.mRNA.gff3
 Mus_musculus.GRCm38.102.mRNA.simp.gff3
 
-
 # Ignore Mac generated resource fork files
 ._*
 
